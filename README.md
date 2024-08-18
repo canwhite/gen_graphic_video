@@ -5,7 +5,11 @@ generate graphic video
 # run
 
 ```
-poetry shell 
-poetry install
-poetry run python app.py
+about running: 
+poetry shell  #virtual env
+poetry install #install third packages
+poetry run python app.py # run script
+
+if you wanna exit the shell, just run:
+exit 
 ```
