@@ -3,7 +3,7 @@ import json
 import libaudio 
 import whisper
 from pool import ThreadPool 
-from request import OpenAITool
+from deepseek import OpenAITool
 from config import API_KEY
 from word_segmentation import split_text_into_sentences
 from text2audio import TTSTool
@@ -11,11 +11,6 @@ from image_gen import batch_call
 from image2video import images_to_video_with_audio,cleanup_assets
 
 
-
-
-
-
-#起个服务
 app = Flask(__name__)
 # 默认是get
 @app.route('/')
@@ -23,7 +18,6 @@ def hello_world():
     # data = json.loads(request.get_data())
     # prompt  = data.get('prompt')
     return 'Hello World!'
-
 
 
 @app.route('/upload', methods=['POST'])
@@ -34,7 +28,6 @@ def upload_file():
         return '上传成功'
     else:
         return '未选择文件', 400
-
 
 
 #  creative process
